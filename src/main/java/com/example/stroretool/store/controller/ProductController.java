@@ -20,33 +20,38 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @PostMapping
+    @GetMapping("/home")
+    public String home() {
+        return "<h1>Welcome!</h1>";
+    }
+
+    @PostMapping("/modify")
     public ResponseEntity<Product> addProduct(@RequestBody Product product) {
         logger.debug("Received request to add product: {}", product);
         return ResponseEntity.ok(productService.addProduct(product));
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/info/{id}")
     public ResponseEntity<Product> findProduct(@PathVariable Long id) {
         logger.debug("Received request to find product with ID: {}", id);
         Product product = productService.findProduct(id);
         return product != null ? ResponseEntity.ok(product) : ResponseEntity.notFound().build();
     }
 
-    @PutMapping("/{id}/price")
+    @PutMapping("/modify/{id}/price")
     public ResponseEntity<Product> changePrice(@PathVariable Long id, @RequestParam BigDecimal newPrice) {
         logger.debug("Received request to change price for product with ID: {} to {}", id, newPrice);
         Product product = productService.changePrice(id, newPrice);
         return product != null ? ResponseEntity.ok(product) : ResponseEntity.notFound().build();
     }
 
-    @GetMapping("/count/{category}")
+    @GetMapping("/info/count/{category}")
     public ResponseEntity<Long> numberOfProductInCategory(@PathVariable String category) {
         logger.debug("Received request to count products in category: {}", category);
         return ResponseEntity.ok(productService.numberOfProductInCategory(category));
     }
 
-    @GetMapping("/sales/this-month")
+    @GetMapping("/info/sales/this-month")
     public ResponseEntity<Long> howMuchWeSellThisMonth() {
         logger.debug("Received request to count products sold this month");
         return ResponseEntity.ok(productService.howMuchWeSellThisMonth());
