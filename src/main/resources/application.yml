@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: default
+
+---
+spring:
+  config:
+    activate:
+      on-profile: security-enabled
+  security:
+    enabled: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: security-disabled
+  security:
+    enabled: false
