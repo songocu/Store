@@ -31,6 +31,8 @@ If you enable security, you can use these users to login:
 - admin:admin
 - user:user
 
+\*\*⚠️ Security can be improved by using JWT token and OAUTH2.\*\*
+
 ## End points for Products
 Take care that the used port is 8000 not 8080
 
