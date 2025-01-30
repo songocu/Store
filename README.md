@@ -24,7 +24,7 @@ You can play with it by using browser or Postman.
 4. Open your browser and go to `http://localhost:8000/h2-console` to access the H2 database console. Use the following settings:
     - JDBC URL: `jdbc:h2:mem:storedb`
     - User Name: `admin`
-    - Password: `admin
+    - Password: `admin`
     - Click on the `Connect` button
 
 5. Open your browser and go to `http://localhost:8000/api/products/home` to see a message that the application is running.
