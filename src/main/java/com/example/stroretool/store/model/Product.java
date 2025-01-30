@@ -5,6 +5,9 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+// I do not understand why my Ide does not let me use Record from Java 17. He will not see the getters and setters
+//public record Product(Long id, String name, BigDecimal price, String category, LocalDateTime addDate, LocalDateTime modifiedDate) {}
+
 
 @Entity
 @AllArgsConstructor

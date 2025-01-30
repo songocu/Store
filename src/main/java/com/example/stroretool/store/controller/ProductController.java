@@ -22,7 +22,10 @@ public class ProductController {
 
     @GetMapping("/home")
     public String home() {
-        return "<h1>Welcome!</h1>";
+        return """
+           <h1>Welcome!</h1>
+           <p>This is the home page.</p>
+           """;
     }
 
     @PostMapping("/modify")
