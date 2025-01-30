@@ -7,8 +7,8 @@ You can play with it by using browser or Postman.
 ### Installation
 1. Clone the repository:
     ```sh
-    git clone https://github.com/songocu/storetool.git
-    cd storetool
+    git clone https://github.com/songocu/Store.git
+    cd Store/
     ```
 
 2. Build the project:

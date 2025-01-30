@@ -31,7 +31,7 @@ class ProductControllerTest {
     void home_ReturnsWelcomeMessage() {
         String response = productController.home();
         assertNotNull(response);
-        assertTrue(response.contains("Welcome!"));
+        assertTrue(response.contains("Welcome to the Store Tool!"));
     }
 
     @Test
