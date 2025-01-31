@@ -44,6 +44,8 @@ public class SecurityConfiguration {
                 .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
     }
 
+    //Best practice is to use a password encoder to not save the original password in the database
+    //This is just for demonstration purposes
     @Bean
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
