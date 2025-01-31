@@ -25,15 +25,6 @@ public class SecurityConfiguration {
     @Autowired
     private UserRepository userRepository;
 
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-//        manager.createUser(User.withUsername("user").password("user").roles("USER").build());
-//        manager.createUser(User.withUsername("admin").password("admin").roles("ADMIN").build());
-//        return manager;
-//    }
-
-
     @Bean
     public UserDetailsService userDetailsService() {
         return username -> userRepository.findByName(username)
